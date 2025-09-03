@@ -10,5 +10,16 @@
   },
   "background": {
     "service_worker": "background.js"
-  }
+  },
+  "action": {
+    "default_title": "Run main"
+  },
+  "permissions": ["tabs"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["constants.js", "utils.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
 }
